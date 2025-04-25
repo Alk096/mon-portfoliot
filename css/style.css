@@ -72,6 +72,10 @@ html,body{
     scroll-behavior: smooth;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--popins), sans-serif;
     background-color: var(--principale);
@@ -296,6 +300,8 @@ body {
 /*============ SERVICES ================*/
 .services {
     position: relative;
+    margin: calc(1.2rem + 2vw);
+
 }
 
 .services-bg-container {
@@ -397,13 +403,13 @@ article:not(:hover) {
     background-color: var(--secondaire);
     border: 3px var(--secondaire) solid;
     border-radius: .4rem;
-
 }
 
 
 /*========= SKILLS ===========*/
 .skills{
     position: relative;
+    margin: calc(1.2rem + 2vw);
 }
 .skills-bg-container{
     width: 50%;
@@ -421,9 +427,15 @@ article:not(:hover) {
 /*========= CONTACT ===========*/
 .contact{
     background-color: var(--footer);
+}
+
+.contact-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: calc(1.2rem + 2vw);
+    padding-bottom:calc(1.2rem + 2vw) ;
+    margin-bottom: 0;
 }
 
 .contact-me{
@@ -452,6 +464,53 @@ article:not(:hover) {
 .clasic-line{
     display: none;
     margin-bottom: 2rem;
+}
+
+.input-group{
+    display: flex;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.input-left{
+    background-color: var(--secondaire);
+    height: 2rem;
+    width: 2.5rem;
+    border-radius: .2rem 0 0 .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea{
+    width: 100%;
+    border: none;
+    resize: none;
+}
+
+input{
+    width: 100%;
+    height:alc(1rem + 1vw);
+    border: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+.contact-btn{
+    display: inline-block;
+    text-decoration: none;
+    padding:.4rem;
+    background-color: var(--secondaire);
+    border: 3px var(--secondaire) solid;
+    border-radius: .4rem;
+    width: 100%;
+    color: var(--white);
 }
 
 /* ========================================== media ====================================*/
@@ -528,6 +587,11 @@ article:not(:hover) {
     .services-bg-img {
         width: 80%;
     }
+    /*===== Contact ======*/
+    .contact-container{
+        flex-direction: row;
+        justify-content:space-around ;
+    }
 }
 
 /*tablette paysage*/
@@ -590,6 +654,17 @@ article:not(:hover) {
 
     .services-container {
         margin-top: var(--padding-large);
+    }
+    /*===== Contact ======*/
+    .contact-container{
+        flex-direction: row;
+        justify-content:space-around ;
+    }
+    .contact-right{
+        width: 50%;
+    }
+    .container-left{
+        width: 50%;
     }
 
 }
@@ -664,5 +739,16 @@ article:not(:hover) {
 
     .services-container {
         margin-top: 6rem;
+    }
+     /*===== Contact ======*/
+     .contact-container{
+        flex-direction: row;
+        justify-content:space-around ;
+    }
+    .contact-right{
+        width: 50%;
+    }
+    .container-left{
+        width: 50%;
     }
 }
