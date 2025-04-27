@@ -149,7 +149,7 @@ body {
     grid-template-rows: 1fr 1fr;
     margin: calc(1.2rem + 2vw);
     margin-top: 0;
-    height: 90vh;
+    height: auto;
 }
 
 .home-left h1 {
@@ -192,16 +192,13 @@ body {
 }
 
 .home-right {
-    width: 100%;
-    overflow: hidden;
-}
-
-.home-right {
     display: grid;
     place-items: center;
     position: relative;
     overflow: hidden;
     height: 100%;
+    width: 100%;
+    min-height: 375px;
 }
 
 .mypic-content,
@@ -221,10 +218,14 @@ body {
 
 .mypic-back {
     width: 100%;
+    max-width: 400px;
+    min-height: 200px;
 }
 
 .mypic {
-    width: 60%;
+    width: 48%;
+    max-width: 500px;
+    min-width: 200px;
 }
 
 /* ========== ABOUT ============ */
@@ -522,11 +523,16 @@ input:focus{
 @media (max-width: 480px) {
 
     /*==== Home =====*/
+    .home{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        margin: 0;
+        padding: var(--padding-mobile);
+    }
     .home-left {
         display: grid;
         place-items: center;
     }
-
     /*=== About ===*/
     .about {
         padding-top: 4rem;
@@ -692,9 +698,19 @@ input:focus{
     /* ========= Home ===========*/
     .home {
         grid-template-columns: 1fr 0.8fr;
+        grid-template-rows: auto;
         grid-template-areas: "home-left home-right";
     }
 
+    .mypic-back{
+        width: 100%;
+        min-width: 550px;
+        height: auto;
+    }
+
+    .mypic{
+        width: 50%;
+    }
     .home-left {
         grid-area: home-left;
     }
@@ -705,7 +721,6 @@ input:focus{
 
     /*=== About ===*/
     .section-label {
-        /* position: absolute; */
         top: 1rem;
         left: 50%;
         transform: translateX(-50%);
