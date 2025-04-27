@@ -33,3 +33,63 @@ window.addEventListener("scroll", scrollActive);
 // 	e.preventDefault();
 // 	// console.log('rdsgfd')
 // })
+
+
+/*===================== EXTRA ======================*/
+/*==================================================*/
+/*=================================================*/
+
+
+/*============= efft parallax====== */
+const canvas = document.getElementById('background-grid');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function drawGrid(offset) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+  ctx.lineWidth = 1;
+
+  let spacing = 50;
+  for (let x = 0; x < canvas.width; x += spacing) {
+    for (let y = 0; y < canvas.height; y += spacing) {
+      ctx.beginPath();
+      ctx.arc(
+        x + (offset * 0.2 % spacing), // décalage horizontal
+        y + (offset * 0.2 % spacing), // décalage vertical
+        2,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = "rgba(0, 255, 180, 0.2)";
+      ctx.fill();
+    }
+  }
+}
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  if (scrollTop <= window.innerHeight) {
+    drawGrid(scrollTop);
+  }
+});
+
+// premier dessin
+drawGrid(0);
+
+/*============= Scrollreveal ================ */
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration :2500,
+  delay : 400
+})
+sr.reveal(`.headline`,{duration:500})
+sr.reveal(`.presentation`,{origin: 'left'})
+sr.reveal(`.xp,.social-media`,{origin: 'bottom'})
