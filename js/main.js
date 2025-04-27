@@ -1,12 +1,13 @@
 /*==============NAV SHADOW ====================*/
-const header = document.getElementById("header")
+const header = document.getElementById("header");
 
-const shadowHeader = ()=>{
-	this.scrollY >= 45 ? header.classList.add("nav_shadow") :
-		header.classList.remove("nav_shadow")
-}
+const shadowHeader = () => {
+  this.scrollY >= 45
+    ? header.classList.add("nav_shadow")
+    : header.classList.remove("nav_shadow");
+};
 
-window.addEventListener('scroll',shadowHeader);
+window.addEventListener("scroll", shadowHeader);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll("section[id]");
 const scrollActive = () => {
@@ -14,42 +15,68 @@ const scrollActive = () => {
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight,
-		sectionTop = current.offsetTop - 250,
-		sectionId = current.getAttribute("id"),
-		sectionsClass = document.querySelector("a[href*=" + sectionId +"]");
+      sectionTop = current.offsetTop - 250,
+      sectionId = current.getAttribute("id"),
+      sectionsClass = document.querySelector("a[href*=" + sectionId + "]");
     if (scrollDown >= sectionTop && scrollDown < sectionTop + sectionHeight) {
-		sectionsClass.classList.add("nav-active-link");
+      sectionsClass.parentElement.classList.add("nav-active-link");
     } else {
-    	sectionsClass.classList.remove("nav-active-link");
+      sectionsClass.parentElement.classList.remove("nav-active-link");
     }
   });
 };
 window.addEventListener("scroll", scrollActive);
 
+/*============= dark/light =============== */
+const lightToggler = document.getElementById("light-toggle");
+const body = document.body;
+
+// Icônes pour les modes
+const lightIcon = "ri-sun-fill";
+const darkIcon = "ri-moon-fill";
+
+// Vérifiez si un mode est déjà enregistré dans le localStorage
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+  lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
+}else  lightToggler.innerHTML = `<i class="${lightIcon}"></i>`; 
+
+// Ajoutez un événement pour basculer entre les modes
+lightToggler.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+
+  // Changez l'icône
+  if (body.classList.contains("dark-mode")) {
+      lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
+      localStorage.setItem("theme", "dark"); // Enregistrez le mode sombre
+  } else {
+      lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
+      localStorage.setItem("theme", "light"); // Enregistrez le mode clair
+  }
+});
+
+
 // /*========= SUBMIT ===========*/
-// const form = document.querySelector('form');
+const form = document.querySelector('form');
 
-// form.addEventListener('submit',(e)=> {
-// 	e.preventDefault();
-// 	// console.log('rdsgfd')
-// })
-
+form.addEventListener('submit',(e)=> {
+	e.preventDefault();
+})
 
 /*===================== EXTRA ======================*/
 /*==================================================*/
 /*=================================================*/
 
-
 /*============= efft parallax====== */
-const canvas = document.getElementById('background-grid');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("background-grid");
+const ctx = canvas.getContext("2d");
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+window.addEventListener("resize", resizeCanvas);
 
 function drawGrid(offset) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -61,8 +88,8 @@ function drawGrid(offset) {
     for (let y = 0; y < canvas.height; y += spacing) {
       ctx.beginPath();
       ctx.arc(
-        x + (offset * 0.2 % spacing), // décalage horizontal
-        y + (offset * 0.2 % spacing), // décalage vertical
+        x + ((offset * 0.2) % spacing), // décalage horizontal
+        y + ((offset * 0.2) % spacing), // décalage vertical
         2,
         0,
         Math.PI * 2
@@ -73,7 +100,7 @@ function drawGrid(offset) {
   }
 }
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   if (scrollTop <= window.innerHeight) {
     drawGrid(scrollTop);
@@ -85,11 +112,33 @@ drawGrid(0);
 
 /*============= Scrollreveal ================ */
 const sr = ScrollReveal({
-  origin: 'top',
-  distance: '60px',
-  duration :2500,
-  delay : 400
-})
-sr.reveal(`.headline`,{duration:500})
-sr.reveal(`.presentation`,{origin: 'left'})
-sr.reveal(`.xp,.social-media`,{origin: 'bottom'})
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+});
+sr.reveal(`.headline`, { duration: 500 });
+sr.reveal(`.presentation`, { origin: "left" });
+sr.reveal(`.xp,.social-media`, { duration:4500,origin: 'bottom' });
+sr.reveal(`.prsentation`,{origin: 'left',duration:700});
+sr.reveal(`.picture`,{origin: 'right'});
+
+/*=========== swiper ============== */
+let swiperSkills = new Swiper('.swiper', {
+  loop: true,
+  loopedSlides:100,
+  spaceBetween:44,
+  grabCursor: true,
+  slidesPerView: 'auto',
+  centeredSlides:true,
+
+  autoplay:{
+    delay:1500,
+    disableOnInteraction:false,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
