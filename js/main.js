@@ -38,8 +38,8 @@ const darkIcon = "ri-moon-fill";
 // Vérifiez si un mode est déjà enregistré dans le localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
-  lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
-}else  lightToggler.innerHTML = `<i class="${lightIcon}"></i>`; 
+  lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
+}else  lightToggler.innerHTML = `<i class="${darkIcon}"></i>`; 
 
 // Ajoutez un événement pour basculer entre les modes
 lightToggler.addEventListener("click", () => {
@@ -47,10 +47,10 @@ lightToggler.addEventListener("click", () => {
 
   // Changez l'icône
   if (body.classList.contains("dark-mode")) {
-      lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
+      lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
       localStorage.setItem("theme", "dark"); // Enregistrez le mode sombre
   } else {
-      lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
+      lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
       localStorage.setItem("theme", "light"); // Enregistrez le mode clair
   }
 });
@@ -135,6 +135,7 @@ let swiperSkills = new Swiper('.swiper', {
   autoplay:{
     delay:1500,
     disableOnInteraction:false,
+    reverseDirection: true, 
   },
 
   navigation: {
