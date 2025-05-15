@@ -655,6 +655,7 @@ input:focus {
         grid-template-rows: auto auto;
         margin: 0;
         padding: var(--padding-mobile);
+        padding-top: 4rem;
     }
 
     .home-left {
