@@ -60,10 +60,10 @@ const btn_burger = document.querySelector(".menu-toggle"),
 sideNavBar = document.querySelector(".side-navbar");
 
 btn_burger.addEventListener("click", () => {
-  sideNavBar.style.right = "0"
+  sideNavBar.classList.add('side-navbar-open')
 })
 btn_close.addEventListener("click", () => {
-  sideNavBar.style.right = "-100%"
+  sideNavBar.classList.remove('side-navbar-open')
 });
 // /*========= SUBMIT ===========*/
 const form = document.querySelector("form");
