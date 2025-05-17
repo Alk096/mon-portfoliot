@@ -39,7 +39,7 @@ const darkIcon = "ri-moon-fill";
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
   lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
-}else  lightToggler.innerHTML = `<i class="${darkIcon}"></i>`; 
+} else lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
 
 // Ajoutez un événement pour basculer entre les modes
 lightToggler.addEventListener("click", () => {
@@ -47,21 +47,30 @@ lightToggler.addEventListener("click", () => {
 
   // Changez l'icône
   if (body.classList.contains("dark-mode")) {
-      lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
-      localStorage.setItem("theme", "dark"); // Enregistrez le mode sombre
+    lightToggler.innerHTML = `<i class="${lightIcon}"></i>`;
+    localStorage.setItem("theme", "dark"); // Enregistrez le mode sombre
   } else {
-      lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
-      localStorage.setItem("theme", "light"); // Enregistrez le mode clair
+    lightToggler.innerHTML = `<i class="${darkIcon}"></i>`;
+    localStorage.setItem("theme", "light"); // Enregistrez le mode clair
   }
 });
+/*=========== Nav btn-toggle ===========*/
+const btn_burger = document.querySelector(".menu-toggle"),
+  btn_close = document.querySelector(".side-nav-clode");
+sideNavBar = document.querySelector(".side-navbar");
 
-
-// /*========= SUBMIT ===========*/
-const form = document.querySelector('form');
-
-form.addEventListener('submit',(e)=> {
-	e.preventDefault();
+btn_burger.addEventListener("click", () => {
+  sideNavBar.style.right = "0"
 })
+btn_close.addEventListener("click", () => {
+  sideNavBar.style.right = "-150vh"
+});
+// /*========= SUBMIT ===========*/
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 /*===================== EXTRA ======================*/
 /*==================================================*/
@@ -119,27 +128,27 @@ const sr = ScrollReveal({
 });
 sr.reveal(`.headline`, { duration: 500 });
 sr.reveal(`.presentation`, { origin: "left" });
-sr.reveal(`.xp,.social-media`, { duration:4500,origin: 'bottom' });
-sr.reveal(`.prsentation`,{origin: 'left',duration:700});
-sr.reveal(`.picture`,{origin: 'right'});
+sr.reveal(`.xp,.social-media`, { duration: 4500, origin: "bottom" });
+sr.reveal(`.prsentation`, { origin: "left", duration: 700 });
+sr.reveal(`.picture`, { origin: "right" });
 
 /*=========== swiper ============== */
-let swiperSkills = new Swiper('.swiper', {
+let swiperSkills = new Swiper(".swiper", {
   loop: true,
-  loopedSlides:100,
-  spaceBetween:44,
+  loopedSlides: 100,
+  spaceBetween: 44,
   grabCursor: true,
-  slidesPerView: 'auto',
-  centeredSlides:true,
+  slidesPerView: "auto",
+  centeredSlides: true,
 
-  autoplay:{
-    delay:1500,
-    disableOnInteraction:false,
-    reverseDirection: true, 
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+    reverseDirection: true,
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
