@@ -63,7 +63,7 @@ btn_burger.addEventListener("click", () => {
   sideNavBar.style.right = "0"
 })
 btn_close.addEventListener("click", () => {
-  sideNavBar.style.right = "-150vh"
+  sideNavBar.style.right = "-100%"
 });
 // /*========= SUBMIT ===========*/
 const form = document.querySelector("form");

@@ -187,7 +187,7 @@ body {
 .side-navbar {
     position: fixed;
     z-index: var(--z-max);
-    right: -150vw;
+    right: -100%;
     background-color: var(--principale);
     height: 100vh;
     width: 45vw;
