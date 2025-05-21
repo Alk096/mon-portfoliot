@@ -65,7 +65,17 @@ btn_burger.addEventListener("click", () => {
 btn_close.addEventListener("click", () => {
   sideNavBar.classList.remove('side-navbar-open')
 });
-// /*========= SUBMIT ===========*/
+// /*========= Contact ===========*/
+const textarea = document.getElementById("auto-resize-textarea");
+const textarea_left = document.querySelector(".textarea-left");
+
+
+textarea.addEventListener("input", () => {
+    textarea.style.height = "2rem";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    textarea_left.style.height = `${textarea.scrollHeight}px`;
+});
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {

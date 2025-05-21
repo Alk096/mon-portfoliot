@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 :root {
     /* ===== Colors ======== */
-    --principale: #0B192C;
+    --principale: #0b192c;
     --secondaire: #008170;
-    --active-link: #00AF98;
+    --active-link: #00af98;
     --ombre: #000000;
     --white: #fff;
-    --footer: #0D1521;
+    --footer: #0d1521;
     /*======= padding ======== */
     --padding-mobile: 1rem;
     --padding-tablet: 1.5rem;
@@ -30,7 +30,7 @@
     --big-p: 1.2rem;
     --normal-p: 1rem;
     /*===== font family =======*/
-    --popins: 'Poppins';
+    --popins: "Poppins";
     /*===== z-index =====*/
     /* Base */
     --z-under: -10;
@@ -62,7 +62,7 @@
     --footer: #03060a;
 
     .about-bg {
-        opacity: .6;
+        opacity: 0.6;
     }
 }
 
@@ -84,7 +84,7 @@
     }
 
     50% {
-        transform: scale(.99);
+        transform: scale(0.99);
     }
 
     100% {
@@ -121,7 +121,7 @@ body {
     background-color: var(--principale);
     position: fixed;
     z-index: var(--z-header);
-    padding: 0 .7rem;
+    padding: 0 0.7rem;
 }
 
 .navbar-logo {
@@ -144,7 +144,7 @@ body {
     color: var(--secondaire);
     font-size: var(--xxl-font);
     padding: var(--padding-mobile);
-    transition: .7s;
+    transition: 0.7s;
 }
 
 .btn-toggle:hover {
@@ -152,7 +152,7 @@ body {
 }
 
 .btn-toggle:active {
-    animation: click .5s;
+    animation: click 0.5s;
 }
 
 .nav {
@@ -189,14 +189,14 @@ body {
     z-index: var(--z-max);
     right: -100%;
     background-color: var(--principale);
-    height: 100vh;
-    width: 45vw;
-    padding: .7rem 5vw;
+    height: 100dvh;
+    width: 45dvw;
+    padding: 0.7rem 5dvw;
     box-shadow: -10px 0 20px rgba(0, 0, 0, 0.3);
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
-.side-navbar-open{
+.side-navbar-open {
     right: 0;
 }
 
@@ -206,7 +206,7 @@ body {
 
 .nav .nav-link {
     display: block;
-    margin: .1rem 0;
+    margin: 0.1rem 0;
 }
 
 /* =========== HOME ============ */
@@ -226,43 +226,43 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: calc(1.2rem + 2vw);
+    margin: calc(1.2rem + 2dvw);
     margin-top: 0;
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .home-left h1 {
     color: var(--secondaire);
-    font-size: calc(2rem + 4.5vw);
+    font-size: calc(2rem + 4.5dvw);
 }
 
 .name {
-    background: linear-gradient(#293735 0%, #569C93 100%);
+    background: linear-gradient(#293735 0%, #569c93 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(1.5rem + 3vw);
+    font-size: calc(1.5rem + 3dvw);
     line-height: 0;
     margin: 0;
 }
 
 .im {
-    font-size: calc(2rem + 4.5vw);
+    font-size: calc(2rem + 4.5dvw);
     color: var(--white);
 }
 
 .xp {
     color: var(--secondaire);
-    font-size: calc(1.4rem + 4vw);
+    font-size: calc(1.4rem + 4dvw);
 }
 
 .social-media {
     margin-top: var(--margin-mobile);
-    width: 30vw;
+    width: 30dvw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: calc(1.2rem + 2.8vw);
+    font-size: calc(1.2rem + 2.8dvw);
     display: none;
 }
 
@@ -316,21 +316,20 @@ body {
 /* ========== ABOUT ============ */
 .section-label {
     display: inline-block;
-    font-size: calc(1rem + .4vw);
+    font-size: calc(1rem + 0.4dvw);
     color: white;
     background-color: var(--secondaire);
     padding: var(--margin-mobile);
     width: 30%;
     height: 3rem;
     max-width: 14rem;
-    border-radius: calc(0.4rem + .2vw);
+    border-radius: calc(0.4rem + 0.2dvw);
     display: grid;
     place-items: center;
     position: relative;
     left: 50%;
     top: 0;
     transform: translate(-50%);
-
 }
 
 .about {
@@ -340,7 +339,7 @@ body {
 
 .about-container {
     height: 100%;
-    margin: calc(1.2rem + 2vw);
+    margin: calc(1.2rem + 2dvw);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,8 +387,7 @@ body {
 /*============ SERVICES ================*/
 .services {
     position: relative;
-    margin: calc(1.2rem + 2vw);
-
+    margin: calc(1.2rem + 2dvw);
 }
 
 .services-bg-container {
@@ -404,7 +402,7 @@ body {
 }
 
 .services-container {
-    margin: calc(1.2rem + 2vw);
+    margin: calc(1.2rem + 2dvw);
     margin-top: var(--margin-desktop);
     display: flex;
     justify-content: space-evenly;
@@ -421,10 +419,9 @@ body {
 
 .service-title {
     color: var(--white);
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(1rem + 0.5dvw);
     text-align: center;
 }
-
 
 /*========= PRIJECT ==========*/
 .projects-container {
@@ -488,21 +485,20 @@ article:not(:hover) {
 .project-btn {
     display: inline-block;
     text-decoration: none;
-    padding: .4rem;
+    padding: 0.4rem;
     background-color: var(--secondaire);
     border: 3px var(--secondaire) solid;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
 }
 
 .project-btn:active {
-    animation: click .7s;
+    animation: click 0.7s;
 }
-
 
 /*========= SKILLS ===========*/
 .skills {
     position: relative;
-    margin: calc(1.2rem + 2vw);
+    margin: calc(1.2rem + 2dvw);
 }
 
 .all-skills-container {
@@ -515,7 +511,7 @@ article:not(:hover) {
 }
 
 .skills-container {
-    background-color: rgb(11, 25, 44, .2);
+    background-color: rgb(11, 25, 44, 0.2);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 2rem;
@@ -570,7 +566,6 @@ article:not(:hover) {
     font-size: 0.9rem;
 }
 
-
 /*========= CONTACT ===========*/
 .contact {
     background-color: var(--footer);
@@ -580,14 +575,14 @@ article:not(:hover) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: calc(1.2rem + 2vw);
-    padding-bottom: calc(1.2rem + 2vw);
+    margin: calc(1.2rem + 2dvw);
+    padding-bottom: calc(1.2rem + 2dvw);
     margin-bottom: 0;
 }
 
 .contact-me {
     color: var(--white);
-    font-size: calc(2rem + .7vw);
+    font-size: calc(2rem + 0.7dvw);
 }
 
 .email-num {
@@ -603,7 +598,7 @@ article:not(:hover) {
 }
 
 .line {
-    height: .2rem;
+    height: 0.2rem;
     width: 18rem;
     margin: 2rem 0;
     background-color: gray;
@@ -616,7 +611,7 @@ article:not(:hover) {
 
 .input-group {
     display: flex;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     width: 100%;
 }
 
@@ -624,21 +619,39 @@ article:not(:hover) {
     background-color: var(--secondaire);
     height: 2rem;
     width: 2.5rem;
-    border-radius: .2rem 0 0 .2rem;
+    border-radius: 0.2rem 0 0 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.textarea-left {
+    background-color: var(--secondaire);
+    min-height: 2rem;
+    max-height: 10rem;
+    width: 2.5rem;
+    border-radius: 0.2rem 0 0 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auto-resize-textarea{
+    width: 100%;
+    min-height: 2rem;
+    max-height: 10rem;
+}
+
 textarea {
     width: 100%;
+    /* height: 30re; */
     border: none;
     resize: none;
 }
 
 input {
     width: 100%;
-    height: alc(1rem + 1vw);
+    height: alc(1rem + 1dvw);
     border: none;
     padding-left: 5px;
 }
@@ -654,22 +667,21 @@ input:focus {
 .contact-btn {
     display: inline-block;
     text-decoration: none;
-    padding: .4rem;
+    padding: 0.4rem;
     background-color: var(--secondaire);
     border: 3px var(--secondaire) solid;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     width: 100%;
     color: var(--white);
 }
 
 .contact-btn:active {
-    animation: click .7s;
+    animation: click 0.7s;
 }
 
 /* ========================================== media ====================================*/
 /* ===================================================================================== */
 /* ===================================================================================== */
-
 
 /*mobile*/
 @media (max-width: 480px) {
@@ -726,7 +738,6 @@ input:focus {
     }
 
     .home-left {
-
         display: grid;
         place-items: center;
     }
