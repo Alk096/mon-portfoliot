@@ -303,14 +303,17 @@ body {
 
 .mypic-back {
     width: 100%;
-    max-width: 400px;
+    max-width: 480px;
     min-height: 200px;
 }
 
 .mypic {
-    width: 48%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 480px;
     min-width: 200px;
+    margin-bottom: 7rem;
+    margin-left: 3rem;
+    height: auto;
 }
 
 /* ========== ABOUT ============ */
@@ -360,6 +363,7 @@ body {
 .img-cercle {
     width: 100%;
     min-width: 250px;
+    border-radius: 50%;
 }
 
 .about-b-container {
@@ -903,7 +907,7 @@ input:focus {
     }
 
     .mypic {
-        width: 50%;
+        width: 100%;
     }
 
     .home-left {
